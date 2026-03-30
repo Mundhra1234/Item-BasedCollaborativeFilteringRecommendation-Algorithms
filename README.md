@@ -257,7 +257,7 @@ This project successfully reproduces item-based collaborative filtering experime
 
 Sarwar, B. et al. (2001)
 "Item-Based Collaborative Filtering Recommendation Algorithms"
-
+https://www.researchgate.net/publication/2369002_Item-based_Collaborative_Filtering_Recommendation_Algorithms
 ---
 
 #  Author
