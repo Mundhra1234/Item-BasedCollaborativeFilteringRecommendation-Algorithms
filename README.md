@@ -30,7 +30,6 @@ item-cf-repro/
 │   └── experiments.ipynb
 │
 ├── results/
-│   ├── tables/
 │   └── figures/
 │
 ├── tests/
