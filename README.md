@@ -1,6 +1,4 @@
-Here is your **final complete README (all in one, clean + corrected + images added properly)** 👇
 
----
 
 # Item-Based Collaborative Filtering (MovieLens 100K)
 
