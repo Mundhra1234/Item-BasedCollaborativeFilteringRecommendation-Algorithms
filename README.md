@@ -1,10 +1,14 @@
-#  Item-Based Collaborative Filtering  (MovieLens 100K)
+Here is your **final complete README (all in one, clean + corrected + images added properly)** 👇
+
+---
+
+# Item-Based Collaborative Filtering (MovieLens 100K)
 
 This repository presents a **complete reproduction of Item-Based Collaborative Filtering experiments** using the MovieLens 100K dataset, inspired by classical recommender system research (Sarwar et al., 2001).
 
 ---
 
-#  Objective
+# Objective
 
 The goal of this project is to:
 
@@ -15,7 +19,7 @@ The goal of this project is to:
 
 ---
 
-#  Repository Structure
+# Repository Structure
 
 ```
 item-cf-repro/
@@ -25,7 +29,8 @@ item-cf-repro/
 │
 ├── documents/
 │   └── paper14/
-     └── rs_report/
+│       └── rs_report/
+│
 ├── src/
 │   └── experiments.ipynb
 │
@@ -40,7 +45,7 @@ item-cf-repro/
 
 ---
 
-#  Dataset Used
+# Dataset Used
 
 | Dataset        | Size            | Purpose                  |
 | -------------- | --------------- | ------------------------ |
@@ -54,7 +59,7 @@ item-cf-repro/
 
 ---
 
-#  Core Pipeline
+# Core Pipeline
 
 ```
 MovieLens Dataset
@@ -78,7 +83,7 @@ Evaluation (MAE)
 
 ---
 
-#  Methodology
+# Methodology
 
 ## 1. User-Item Matrix
 
@@ -86,15 +91,11 @@ Evaluation (MAE)
 * Columns → Movies
 * Values → Ratings
 
----
-
 ## 2. Similarity Measures
 
 * Cosine Similarity
 * Pearson Correlation
 * Adjusted Cosine
-
----
 
 ## 3. Prediction Formula
 
@@ -104,29 +105,28 @@ Evaluation (MAE)
 
 ---
 
-##  Experimental Results
+# Experimental Results
 
----
-
-##  1. Similarity Comparison
+## 1. Similarity Comparison
 
 | Method          | MAE        |
 | --------------- | ---------- |
 | Adjusted Cosine | **0.7561** |
 | Cosine          | 0.8052     |
 | Pearson         | 0.8051     |
-##  1. Similarity Comparison
 
-![Similarity Metrics](results/figures/similarity%20metrics%20comparisons.png)
+<p align="center">
+  <img src="results/figures/similarity%20metrics%20comparisons.png" width="500"/>
+</p>
 
-###  Observation:
+**Observation:**
 
 * Adjusted cosine performs best
 * Matches theoretical expectations
 
 ---
 
-##  2. Train/Test Ratio Impact
+## 2. Train/Test Ratio Impact
 
 | Train % | MAE        |
 | ------- | ---------- |
@@ -135,13 +135,17 @@ Evaluation (MAE)
 | 80%     | 0.7561     |
 | 90%     | **0.7548** |
 
-###  Observation:
+<p align="center">
+  <img src="results/figures/parameters.png" width="500"/>
+</p>
+
+**Observation:**
 
 * More training data → lower error
 
 ---
 
-##  3. Neighbourhood Size (k)
+## 3. Neighbourhood Size (k)
 
 | k   | MAE    |
 | --- | ------ |
@@ -150,26 +154,34 @@ Evaluation (MAE)
 | 100 | 0.7528 |
 | 200 | 0.7531 |
 
-###  Insight:
+<p align="center">
+  <img src="results/figures/sensitivity%20of%20neighborhood%20size.png" width="500"/>
+</p>
+
+**Insight:**
 
 * Optimal range: **30–100 neighbors**
 
 ---
 
-##  4. User vs Item Comparison
+## 4. User vs Item Comparison
 
 | Method     | MAE        |
 | ---------- | ---------- |
 | User-Based | **0.7336** |
 | Item-Based | 0.7506     |
 
-###  Insight:
+<p align="center">
+  <img src="results/figures/item%20vs%20user%20metrics.png" width="500"/>
+</p>
 
-* User-based slightly outperforms item-based in this dataset
+**Insight:**
+
+* User-based slightly outperforms item-based
 
 ---
 
-##  5. Model Size Analysis
+## 5. Model Size Analysis
 
 | Model Size   | MAE        |
 | ------------ | ---------- |
@@ -178,20 +190,40 @@ Evaluation (MAE)
 | Large (200)  | 0.7838     |
 | Full Model   | **0.7561** |
 
-###  Observation:
+<p align="center">
+  <img src="results/figures/sensitivity%20of%20model%20size.png" width="500"/>
+</p>
+
+**Observation:**
 
 * Larger models improve accuracy
 
 ---
 
-##  6. Cross Validation
+## 6. Parameter Sensitivity
+
+<p align="center">
+  <img src="results/figures/sensitivity%20of%20parameter.png" width="500"/>
+</p>
+
+---
+
+## 7. Final Results
+
+<p align="center">
+  <img src="results/figures/final%20result.png" width="500"/>
+</p>
+
+---
+
+## 8. Cross Validation
 
 * User-Based MAE: **0.7336 ± 0.0062**
 * Item-Based MAE: **0.7506 ± 0.0064**
 
 ---
 
-#  Key Observations
+# Key Observations
 
 * Adjusted cosine similarity performs best
 * Increasing data improves model accuracy
@@ -201,7 +233,7 @@ Evaluation (MAE)
 
 ---
 
-#  Limitations
+# Limitations
 
 * Cold start problem
 * Sparse dataset challenges
@@ -209,7 +241,7 @@ Evaluation (MAE)
 
 ---
 
-#  How to Run
+# How to Run
 
 ## 1. Install dependencies
 
@@ -219,15 +251,11 @@ pip install -r requirements.txt
 
 ## 2. Add dataset
 
-Place file:
-
 ```
 data/ml-100k/u.data
 ```
 
 ## 3. Run notebook
-
-Open:
 
 ```
 src/experiments.ipynb
@@ -235,19 +263,19 @@ src/experiments.ipynb
 
 ---
 
-#  Runtime
+# Runtime
 
 * Approx: 5–10 minutes depending on system
 
 ---
 
-#  Conclusion
+# Conclusion
 
 This project successfully reproduces item-based collaborative filtering experiments and validates key research findings. The system demonstrates strong performance and provides insights into similarity measures, neighborhood selection, and dataset size impact.
 
 ---
 
-#  Future Work
+# Future Work
 
 * Matrix Factorization (SVD, SVD++)
 * Hybrid Recommender Systems
@@ -255,14 +283,18 @@ This project successfully reproduces item-based collaborative filtering experime
 
 ---
 
-#  Reference
+# Reference
 
 Sarwar, B. et al. (2001)
 "Item-Based Collaborative Filtering Recommendation Algorithms"
-https://www.researchgate.net/publication/2369002_Item-based_Collaborative_Filtering_Recommendation_Algorithms
+[https://www.researchgate.net/publication/2369002_Item-based_Collaborative_Filtering_Recommendation_Algorithms](https://www.researchgate.net/publication/2369002_Item-based_Collaborative_Filtering_Recommendation_Algorithms)
+
 ---
 
-#  Author
+# Author
 
 Divyanshi
 B.Tech AI & Data Science
+
+
+
